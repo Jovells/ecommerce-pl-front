@@ -1,23 +1,18 @@
 export const inclusions = [
   {
-    title: 'Free Shipping',
-    description: 'Free shipping for order above $150',
-    icon: '/assets/icons/shipping.svg',
+    title: 'Nationwide Shipping',
+    description: 'We ship to all locations in Ghana',
+    icon: '/assets/icons/shipping.png',
   },
   {
-    title: 'Money Guarantee',
-    description: 'Within 30 days for an exchange',
-    icon: '/assets/icons/dollar.svg',
-  },
-  {
-    title: 'Online Support',
-    description: '24 hours a day, 7 days a week',
-    icon: '/assets/icons/support.svg',
+    title: 'Custom Orders',
+    description: 'Order custom products',
+    icon: '/assets/icons/custom.png',
   },
   {
     title: 'Flexible Payment',
-    description: 'Pay with multiple credit cards',
-    icon: '/assets/icons/payment.svg',
+    description: 'Pay with card or mobile money',
+    icon: '/assets/icons/pay.png',
   },
 ]
 

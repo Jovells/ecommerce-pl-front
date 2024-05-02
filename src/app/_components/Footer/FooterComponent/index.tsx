@@ -41,7 +41,13 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
         <Gutter>
           <div className={classes.wrap}>
             <Link href="/">
-              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
+              <Image
+                style={{ filter: 'invert(1)' }}
+                src="/assets/logo.svg"
+                alt="logo"
+                width={50}
+                height={50}
+              />
             </Link>
 
             <p>{footer?.copyright}</p>

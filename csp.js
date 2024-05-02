@@ -1,6 +1,5 @@
 const policies = {
-  'default-src': ["'self'", process.env.NEXT_PUBLIC_SERVER_URL,
-],
+  'default-src': ["'self'", process.env.NEXT_PUBLIC_SERVER_URL],
   'script-src': [
     "'self'",
     "'unsafe-inline'",
@@ -10,9 +9,19 @@ const policies = {
     'https://maps.googleapis.com',
     process.env.NEXT_PUBLIC_SERVER_URL,
   ],
-  'child-src': ["'self'"],
-  'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-  'img-src': ["'self'", 'https://*.stripe.com', 'https://raw.githubusercontent.com'],
+  'child-src': ["'self'", process.env.NEXT_PUBLIC_SERVER_URL],
+  'style-src': [
+    "'self'",
+    process.env.NEXT_PUBLIC_SERVER_URL,
+    "'unsafe-inline'",
+    'https://fonts.googleapis.com',
+  ],
+  'img-src': [
+    "'self'",
+    process.env.NEXT_PUBLIC_SERVER_URL,
+    'https://*.stripe.com',
+    'https://raw.githubusercontent.com',
+  ],
   'font-src': ["'self'"],
   'frame-src': [
     "'self'",

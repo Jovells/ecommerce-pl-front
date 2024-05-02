@@ -38,6 +38,13 @@ export const fetchDoc = async <T>(args: {
     const { cookies } = await import('next/headers')
     token = cookies().get(payloadToken)
   }
+  const body = {
+    query: queryMap[collection].query,
+    variables: {
+      slug,
+      draft,
+    },
+  }
 
   const doc: T = await fetch(`${GRAPHQL_API_URL}/api/graphql`, {
     method: 'POST',
@@ -47,13 +54,7 @@ export const fetchDoc = async <T>(args: {
     },
     cache: 'no-store',
     next: { tags: [`${collection}_${slug}`] },
-    body: JSON.stringify({
-      query: queryMap[collection].query,
-      variables: {
-        slug,
-        draft,
-      },
-    }),
+    body: JSON.stringify(body),
   })
     ?.then(res => res.json())
     ?.then(res => {

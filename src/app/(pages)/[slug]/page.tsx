@@ -3,8 +3,7 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Category, Page } from '../../../payload/payload-types'
-import { staticHome } from '../../../payload/seed/home-static'
+import type { Category, Page } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Blocks } from '../../_components/Blocks'
@@ -18,7 +17,7 @@ import { generateMeta } from '../../_utilities/generateMeta'
 // But we also need to force Next.js to dynamically render this page on each request for preview mode to work
 // See https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
-export const dynamic = 'force-dynamic'
+// export const dynamic = 'force-dynamic'
 
 import Categories from '../../_components/Categories'
 import Promotion from '../../_components/Promotion'
@@ -49,9 +48,9 @@ export default async function Page({ params: { slug = 'home' } }) {
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
   // this is really only useful for those who are demoing this template
-  if (!page && slug === 'home') {
-    page = staticHome
-  }
+  // if (!page && slug === 'home') {
+  //   page = staticHome
+  // }
 
   if (!page) {
     return notFound()
@@ -110,9 +109,9 @@ export async function generateMetadata({ params: { slug = 'home' } }): Promise<M
     // in production you may want to redirect to a 404  page or at least log the error somewhere
   }
 
-  if (!page && slug === 'home') {
-    page = staticHome
-  }
+  // if (!page && slug === 'home') {
+  //   page = staticHome
+  // }
 
   return generateMeta({ doc: page })
 }
