@@ -26,7 +26,7 @@ const Promotion = () => {
 
       if (timeDifference === 0) {
         clearInterval(timerInterval)
-        // You can add code here to handle what happens when the target date is reached.
+        //You can add code here to handle what happens when the target date is reached.
       }
     }, 1000)
 
