@@ -10,11 +10,9 @@ const Promotion = () => {
     minutes: 0,
     seconds: 0,
   })
-
-  const targetDate = new Date()
-  targetDate.setDate(targetDate.getDate() + 3)
-
   useEffect(() => {
+    const targetDate = new Date()
+    targetDate.setDate(targetDate.getDate() + 3)
     const timerInterval = setInterval(() => {
       const currentTime = new Date()
       const timeDifference = Math.max(Number(targetDate) - Number(currentTime), 0)
