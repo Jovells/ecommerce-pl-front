@@ -1,0 +1,1 @@
+/Users/macbookpro/repos/ecommerce-pl/src/payload/payload-types.ts
